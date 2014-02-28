@@ -92,9 +92,9 @@ describe Grape::Entity do
 
             subject.exposures.should == {
               awesome: {},
-              awesome__nested: {:nested => true},
-              awesome__nested__moar_nested: { as: 'weee', :nested => true },
-              awesome__another_nested: { using: 'Awesome', :nested => true }
+              awesome__nested: { :nested => true },
+              awesome__nested__moar_nested: { as: 'weee', nested: true},
+              awesome__another_nested: { using: 'Awesome', nested: true}
             }
           end
 
@@ -129,7 +129,6 @@ describe Grape::Entity do
               }
             }
           end
-
 
           it 'is safe if its nested exposures are safe' do
             subject.with_options safe: true do

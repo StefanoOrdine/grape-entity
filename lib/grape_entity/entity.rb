@@ -338,7 +338,7 @@ module Grape
     end
 
     def valid_exposures
-      exposures.reject{|a, options| options[:nested]}.select do |attribute, exposure_options|
+      exposures.reject { |a, options| options[:nested] }.select do |attribute, exposure_options|
         valid_exposure?(attribute, exposure_options)
       end
     end
